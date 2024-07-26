@@ -1,24 +1,66 @@
-@import 'https://fonts.googleapis.com/css2?family=Goldman&display=swap';
-html,
 body {
-  background: #212121;
-  height: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
 }
-.text-change-container {
-  height: 100%;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+
+.heart {
+    height: 70px;
+    width: 70px;
+    background: purple;
+    position: absolute;
+    transform: rotate(-45deg);
+    box-shadow: -10px 10px 90px purple;
+    animation: heart 0.6s linear infinite;
+    margin-bottom: 200px;
+    margin-left: 320px;
 }
-.text-change {
-  font-family: 'Goldman', monospace;
-  font-weight: normal;
-  font-size: larger;
-  color: #c8c8c8;
-  filter: drop-shadow(0 0 0.3em rgba(200,200,200,0.3));
+
+
+@keyframes heart{
+    0%{
+        transform: rotate(-45deg) scale(1.07);
+    }
+    80%{
+        transform: rotate(-45deg) scale(1.07);
+    }
+    100%{
+        transform: rotate(-45deg) scale(0.8);
+    }
 }
-.dud {
-  color: rgba(200,30,30,0.8);
-  filter: drop-shadow(0 0 0.5em #f00);
+
+.heart::before {
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background: purple;
+    top: -50%;
+    border-radius: 50px;
+    box-shadow: -10px -10px 90px purple;
+}
+
+
+
+.heart::after {
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background: purple;
+    right: -50%;
+    border-radius: 50px;
+    box-shadow: 10px 10px 90px purple;
+}
+
+.name h1 {
+    color: purple;
+    margin: 0;
+    padding: 0;
+    font-size: 290px;
+    position: relative;
 }
